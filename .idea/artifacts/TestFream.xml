@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TestFream">
+    <output-path>$PROJECT_DIR$/out/artifacts/TestFream</output-path>
+    <root id="archive" name="TestFream.jar">
+      <element id="file-copy" path="$USER_HOME$/Downloads/fastjson-1.2.5.jar" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/junit-4.10.jar" />
+      <element id="module-output" name="TestFream" />
+    </root>
+  </artifact>
+</component>
