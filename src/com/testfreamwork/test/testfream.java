@@ -15,7 +15,7 @@ public class testfream {
     @BeforeClass
     public static void setup(){
         init("http://localhost", "", "RestfulApi/index.php/");
-//        initFile();
+        initFile();
     }
 
 //    @Test
@@ -85,7 +85,7 @@ public class testfream {
         })).getJson().except().equalStr("status", "1", "标识符").getJsonArray("data").isArrayNum(2).isArrayKey().equalStr("name", "wer123").equalInt("position", 1).isArrayEnd();
 
 
-//        createDoc();
+        createDoc();
     }
 
 //    @Test
@@ -116,11 +116,11 @@ public class testfream {
 //            System.out.println(response.getContent());
             return response;
         })).getJson().except().equalStr("status", "1").
-            getJsonArray("data").isArrayKey().isInt("id").isRegex("num", "[0-9a-zA-Z|-]+").isArrayEnd();
+            getJsonArray("data").isArrayKey().isInt("id").isRegex("num", "[0-9a-zA-Z|-]").isArrayEnd();
 
 
-//        createDoc();
-//
+        createDoc();
+
     }
 
 }
