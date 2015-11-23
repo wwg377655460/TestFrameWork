@@ -13,6 +13,7 @@ public class Estimate {
 
     Response response = null;
     JSONObject jsonObject = null;
+    JSONObject saveAllJsonObject = null;
     JSONArray jsonArray = null;
 
     public Estimate(Response response, JSONObject jsonObject) {
@@ -262,7 +263,7 @@ public class Estimate {
         if(response.getCode() != code){
             StackTraceElement ste = new Throwable().getStackTrace()[1];
             String s = ste.getFileName() + ": Line " + ste.getLineNumber();
-            this.printMes("equalCode", code + "", s,  response.getCode() + "");
+            this.printMes("equalCode", code + "", s, response.getCode() + "");
         }
 
         return this;
@@ -282,6 +283,7 @@ public class Estimate {
             printMes("getJsonArray", "Array", s, "NULL");
         }else{
             this.jsonArray = jsonArray;
+
         }
 
         return this;
@@ -320,6 +322,7 @@ public class Estimate {
                 return this;
             }else{
                 TestFreamWork.setIsenterArray(1);//json进入数组
+                this.saveAllJsonObject = this.jsonObject;
                 this.jsonObject = jsonArray.getJSONObject(0);
                 return this;
             }
@@ -347,11 +350,17 @@ public class Estimate {
             array.add("{...}");
         }
 
+        this.jsonObject = this.saveAllJsonObject;
         TestFreamWork.getResponseJson().put(arraydata, array);
         TestFreamWork.setArraydata("");
         TestFreamWork.getResponseArray().clear();
         TestFreamWork.setIsenterArray(0);
 
+        return this;
+    }
+
+    public Estimate printJsonObject(){
+        System.out.println(this.jsonObject.toString());
         return this;
     }
 

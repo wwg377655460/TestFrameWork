@@ -146,6 +146,7 @@ get("/api/getplease", "邀请码", (request -> {
 >**校验的方法**
 
 ```
+printJsonObject()  //打印json字符串的值
 equalInt()
 equalDouble()
 equalStr()   //参数第一个为校验值的name，第二个参数为期望值，第三个为可选参数为name的说明，可以在接口文档里生成
@@ -171,7 +172,7 @@ Actual => 123
 ```
 {"status":1, "data":[...]}
 ```
-> isArrayKey()后面与对json字符串的校验相同(相当于现在的json值就是数值内第一个json字符串)，但一定要用isArrayEnd()方法结尾，isArrayEnd()方法后不能校验其他的json值，如果要校验多个json数组检验获取返回的Response对象，进行多次校验   
+> > isArrayKey()后面与对json字符串的校验相同(相当于现在的json值就是数值内第一个json字符串)，但一定要用isArrayEnd()方法结尾，isArrayEnd()方法让当前的字符串又变为以前的Json对象，但是只能获取上一层的json对象(数组内部的数组执行isArrayKey()方法后最外层的json对象会丢失),如果要校验多个json数组检验获取返回的Response对象，进行多次校验  
 ###与Junit的结合
 > 使用Junit框架我们可以在测试方法之前初始化一些信息
 
@@ -192,6 +193,11 @@ get("/api/sign", "登录", (request -> {
         })).print_content();
 ```
 > initFile()方法可以生成接口文档的基本信息   
+> ###功能完善
+> 1. 可以控制文档的生成
+> isCreateDoc(false);
+> 在执行之前调用isCreateDoc(false)方法将不会生成文档，使用Junit框架时可以放在@BeforeClass注释的函数initFile()方法前，不让生成文档，在测试完成后将false改成true就可以开始生成文档  
+> 
 #####下面给出一个Demo
 
 ```

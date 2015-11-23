@@ -3,8 +3,13 @@ package com.testfreamwork.core;
 import com.alibaba.fastjson.JSONObject;
 import org.junit.Test;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 /**
  * Created by wsdevotion on 15/11/21.
@@ -22,10 +27,11 @@ public class TestFreamWork {
     private static String method = "";
     private static String name = "";
     private static String requestJson = "";
+    private static Boolean isCreateFileDoc = true;
     private static Map<String, String> map = new HashMap<>();
 
     @Test
-    public static Response get(String url, String name, Handle handle){
+    public static Response get(String url, String name, Handle handle) {
         Request request = new Request();
         TestFreamWork.method = "get";
         TestFreamWork.name = name;
@@ -35,7 +41,7 @@ public class TestFreamWork {
         return handle.handle(request);
     }
 
-    public static Response post(String url, String name, Handle handle){
+    public static Response post(String url, String name, Handle handle) {
         Request request = new Request();
         TestFreamWork.method = "post";
         TestFreamWork.name = name;
@@ -45,7 +51,7 @@ public class TestFreamWork {
         return handle.handle(request);
     }
 
-    public static Response put(String url, String name, Handle handle){
+    public static Response put(String url, String name, Handle handle) {
         Request request = new Request();
         TestFreamWork.method = "put";
         TestFreamWork.name = name;
@@ -55,7 +61,7 @@ public class TestFreamWork {
         return handle.handle(request);
     }
 
-    public static Response delete(String url, String name, Handle handle){
+    public static Response delete(String url, String name, Handle handle) {
         Request request = new Request();
         TestFreamWork.method = "delete";
         TestFreamWork.name = name;
@@ -65,14 +71,15 @@ public class TestFreamWork {
         return handle.handle(request);
     }
 
-    public static void init(String base_url, String port, String appRoute){
-        if(port == null || port.equals("")){
+    public static void init(String base_url, String port, String appRoute) {
+        if (port == null || port.equals("")) {
             TestFreamWork.baseUrl = base_url + "/" + appRoute;
-        }else{
+        } else {
             TestFreamWork.baseUrl = base_url + ":" + port + "/" + appRoute;
         }
 
     }
+
     public static Map<String, String> getMap() {
         return map;
     }
@@ -138,17 +145,28 @@ public class TestFreamWork {
         TestFreamWork.code = code;
     }
 
-    public static void initFile(){
-        CreateinitFile.initFile(baseUrl);
+    public static void initFile() {
+        if (TestFreamWork.isCreateFileDoc) {
+            CreateinitFile.initFile(baseUrl);
+        }
     }
 
-    public static void createDoc(){
+    public static void isCreateDoc(Boolean isCreateDoc) {
+        if (!isCreateDoc) {
+            TestFreamWork.isCreateFileDoc = false;
+        }
+    }
+
+    public static void createDoc() {
 //        System.out.print(baseUrl + url);
 //        System.out.print(name);
 //        System.out.print(requestJson);
 //        System.out.print(map);
 
-        CreateFile.createDoc(url, method,  name, map, code, responseJson.toJSONString().replace("\\", ""), requestJson);
+        if (TestFreamWork.isCreateFileDoc) {
+            CreateFile.createDoc(url, method, name, map, code, responseJson.toJSONString().replace("\\", ""), requestJson);
+        }
 
     }
+
 }
