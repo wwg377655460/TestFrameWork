@@ -36,17 +36,13 @@ public class Request {
     private String urlString = "";
 
 
-
-
     /**
      * 发送HTTP请求
      *
-     * @param urlString
      * @return 响映对象
      * @throws IOException
      */
-    public Response send_param()
-             {
+    public Response send_param() {
         HttpURLConnection urlConnection = null;
         try {
             if (method.equalsIgnoreCase("GET") && parameters != null) {
@@ -87,15 +83,14 @@ public class Request {
             }
 
             return this.makeContent(urlString, urlConnection);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
     }
 
 
-    public Response send_json()
-    {
+    public Response send_json() {
         HttpURLConnection urlConnection = null;
         try {
             if (method.equalsIgnoreCase("GET") && json != null && !json.equals("")) {
@@ -116,13 +111,13 @@ public class Request {
 
             if ((method.equalsIgnoreCase("POST") || method.equalsIgnoreCase("PUT") || method.equalsIgnoreCase("DELETE")) && parameters != null) {
                 String param = json;
-                urlConnection.getOutputStream().write(param.toString().getBytes());
+                urlConnection.getOutputStream().write(param.getBytes());
                 urlConnection.getOutputStream().flush();
                 urlConnection.getOutputStream().close();
             }
 
             return this.makeContent(urlString, urlConnection);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
@@ -136,10 +131,16 @@ public class Request {
      * @throws IOException
      */
     private Response makeContent(String urlString,
-                                    HttpURLConnection urlConnection) throws IOException {
+                                 HttpURLConnection urlConnection) throws IOException {
         Response Responseer = new Response();
+        String ecod = this.defaultContentEncoding;
+        InputStream in = null;
         try {
-            InputStream in = urlConnection.getInputStream();
+            if (urlConnection.getResponseCode() == 200) {
+                in = urlConnection.getInputStream();
+            } else {
+                in = urlConnection.getErrorStream();
+            }
             BufferedReader bufferedReader = new BufferedReader(
                     new InputStreamReader(in));
             Responseer.contentCollection = new Vector<String>();
@@ -152,51 +153,35 @@ public class Request {
             }
             bufferedReader.close();
 
-            String ecod = urlConnection.getContentEncoding();
+            ecod = urlConnection.getContentEncoding();
             if (ecod == null)
                 ecod = this.defaultContentEncoding;
 
-            Responseer.urlString = urlString;
+            Responseer.setUrlString(urlString);
 
-            Responseer.defaultPort = urlConnection.getURL().getDefaultPort();
-            Responseer.file = urlConnection.getURL().getFile();
-            Responseer.host = urlConnection.getURL().getHost();
-            Responseer.path = urlConnection.getURL().getPath();
-            Responseer.port = urlConnection.getURL().getPort();
-            Responseer.protocol = urlConnection.getURL().getProtocol();
-            Responseer.query = urlConnection.getURL().getQuery();
-            Responseer.ref = urlConnection.getURL().getRef();
-            Responseer.userInfo = urlConnection.getURL().getUserInfo();
+            Responseer.setDefaultPort(urlConnection.getURL().getDefaultPort());
+            Responseer.setFile(urlConnection.getURL().getFile());
+            Responseer.setHost(urlConnection.getURL().getHost());
+            Responseer.setPath(urlConnection.getURL().getPath());
+            Responseer.setPort(urlConnection.getURL().getPort());
+            Responseer.setProtocol(urlConnection.getURL().getProtocol());
+            Responseer.setQuery(urlConnection.getURL().getQuery());
+            Responseer.setRef(urlConnection.getURL().getRef());
+            Responseer.setUserInfo(urlConnection.getURL().getUserInfo());
 
-            Responseer.content = new String(temp.toString().getBytes(), ecod);
-            Responseer.contentEncoding = ecod;
-            Responseer.code = urlConnection.getResponseCode();
-            Responseer.message = urlConnection.getResponseMessage();
-            Responseer.contentType = urlConnection.getContentType();
-            Responseer.method = urlConnection.getRequestMethod();
-            Responseer.connectTimeout = urlConnection.getConnectTimeout();
-            Responseer.readTimeout = urlConnection.getReadTimeout();
+            Responseer.setContent(StrUtil.decode(new String(temp.toString().getBytes(), ecod)));
+            Responseer.setContentEncoding(ecod);
+            Responseer.setCode(urlConnection.getResponseCode());
+            Responseer.setMessage(urlConnection.getResponseMessage());
+            Responseer.setContentType(urlConnection.getContentType());
+            Responseer.setMethod(urlConnection.getRequestMethod());
+            Responseer.setConnectTimeout(urlConnection.getConnectTimeout());
+            Responseer.setReadTimeout(urlConnection.getReadTimeout());
 
             return Responseer;
         } catch (IOException e) {
-            Responseer.defaultPort = urlConnection.getURL().getDefaultPort();
-            Responseer.file = urlConnection.getURL().getFile();
-            Responseer.host = urlConnection.getURL().getHost();
-            Responseer.path = urlConnection.getURL().getPath();
-            Responseer.port = urlConnection.getURL().getPort();
-            Responseer.protocol = urlConnection.getURL().getProtocol();
-            Responseer.query = urlConnection.getURL().getQuery();
-            Responseer.ref = urlConnection.getURL().getRef();
-            Responseer.userInfo = urlConnection.getURL().getUserInfo();
-
-            Responseer.contentEncoding = urlConnection.getContentEncoding();
-            Responseer.code = urlConnection.getResponseCode();
-            Responseer.message = urlConnection.getResponseMessage();
-            Responseer.contentType = urlConnection.getContentType();
-            Responseer.method = urlConnection.getRequestMethod();
-            Responseer.connectTimeout = urlConnection.getConnectTimeout();
-            Responseer.readTimeout = urlConnection.getReadTimeout();
-            return Responseer;
+            e.printStackTrace();
+            return null;
         } finally {
             if (urlConnection != null)
                 urlConnection.disconnect();
@@ -217,7 +202,6 @@ public class Request {
         this.defaultContentEncoding = defaultContentEncoding;
         return this;
     }
-
 
 
     /**
@@ -252,7 +236,7 @@ public class Request {
         this.parameters = parameters;
     }
 
-    public Request setAccept(String accept){
+    public Request setAccept(String accept) {
         propertys.put("Accept", accept);
         return this;
     }

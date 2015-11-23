@@ -82,10 +82,10 @@ public class testfream {
             MyJsonObject myJsonObject = new MyJsonObject();
             myJsonObject.put("name", "wersdf123", "姓名");
             request.setJson(myJsonObject.toString());
+            request.setDefaultContentEncoding("UTF-8");
             Response response = request.send_json();
             return response;
-        })).getJson().except().equalStr("status", "1", "标识符").getJsonArray("data").isArrayNum(2).isArrayKey().equalStr("name", "wer123").equalInt("position", 1).isArrayEnd();
-
+        })).print_content();
 
         createDoc();
     }

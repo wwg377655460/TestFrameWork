@@ -12,59 +12,53 @@ import java.util.Vector;
  */
 public class Response {
 
-    String urlString;
+    private String urlString;
 
-    int defaultPort;
+    private int defaultPort;
 
-    String file;
+    private String file;
 
-    String host;
+    private String host;
 
-    String path;
+    private String path;
 
     private JSONObject jsonObject = null;
 
-    int port;
+    private int port;
 
-    public Response getJson(){
+    public ExceptValue getJson() {
         JSONObject jsonObject = JSON.parseObject(this.content);
         this.setJsonObject(jsonObject);
-        return this;
+        ExceptValue exceptValue = new ExceptValue(this, jsonObject);
+        return exceptValue;
     }
 
 
-    public Estimate except(){
-        Estimate estimate = new Estimate(this, jsonObject);
-        return estimate;
-    }
+    private String protocol;
 
+    private String query;
 
+    private String ref;
 
-    String protocol;
+    private String userInfo;
 
-    String query;
+    private String contentEncoding;
 
-    String ref;
+    private String content;
 
-    String userInfo;
+    private String contentType;
 
-    String contentEncoding;
+    private int code;
 
-    String content;
+    private String message;
 
-    String contentType;
+    private String method;
 
-    int code;
+    private int connectTimeout;
 
-    String message;
+    private int readTimeout;
 
-    String method;
-
-    int connectTimeout;
-
-    int readTimeout;
-
-    Vector<String> contentCollection;
+    public Vector<String> contentCollection;
 
     public String getContent() {
         return content;
@@ -146,19 +140,96 @@ public class Response {
         return jsonObject;
     }
 
-    public void setJsonObject(JSONObject jsonObject) {
+    protected void setJsonObject(JSONObject jsonObject) {
         this.jsonObject = jsonObject;
     }
 
-    public void print_content(){
-        System.out.print(this.content);
+    public void print_content() {
+        System.out.print(content);
     }
 
-    public void print_content_type(){
+    public void print_content_type() {
         System.out.print(this.contentType);
     }
 
-    public void print_code(){
+    public void print_code() {
         System.out.print(this.code);
+    }
+
+
+    protected void setUrlString(String urlString) {
+        this.urlString = urlString;
+    }
+
+    protected void setDefaultPort(int defaultPort) {
+        this.defaultPort = defaultPort;
+    }
+
+    protected void setFile(String file) {
+        this.file = file;
+    }
+
+    protected void setHost(String host) {
+        this.host = host;
+    }
+
+    protected void setPath(String path) {
+        this.path = path;
+    }
+
+    protected void setPort(int port) {
+        this.port = port;
+    }
+
+    protected void setProtocol(String protocol) {
+        this.protocol = protocol;
+    }
+
+    protected void setQuery(String query) {
+        this.query = query;
+    }
+
+    protected void setRef(String ref) {
+        this.ref = ref;
+    }
+
+    protected void setUserInfo(String userInfo) {
+        this.userInfo = userInfo;
+    }
+
+    protected void setContentEncoding(String contentEncoding) {
+        this.contentEncoding = contentEncoding;
+    }
+
+    protected void setContent(String content) {
+        this.content = content;
+    }
+
+    protected void setContentType(String contentType) {
+        this.contentType = contentType;
+    }
+
+    protected void setCode(int code) {
+        this.code = code;
+    }
+
+    protected void setMessage(String message) {
+        this.message = message;
+    }
+
+    protected void setMethod(String method) {
+        this.method = method;
+    }
+
+    protected void setConnectTimeout(int connectTimeout) {
+        this.connectTimeout = connectTimeout;
+    }
+
+    protected void setReadTimeout(int readTimeout) {
+        this.readTimeout = readTimeout;
+    }
+
+    protected void setContentCollection(Vector<String> contentCollection) {
+        this.contentCollection = contentCollection;
     }
 }

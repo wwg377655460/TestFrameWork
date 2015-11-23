@@ -35,7 +35,7 @@ public class CreateFile {
             fw.write("\n");
             fw.write("```\n");
             fw.write(code + " OK\n");
-            fw.write(ForJsonStr.format(responseJson.toString()) + "\n");
+            fw.write(ForJsonStr.format(responseJson) + "\n");
             fw.write("```\n");
             fw.write("\n");
             fw.write("\n");

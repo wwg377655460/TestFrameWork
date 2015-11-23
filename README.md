@@ -132,7 +132,7 @@ print_content()   //打印返回内容
 print_code()      //打印状态码
 print_content_type()   //答应返回值类型
 ```
-> 如果状态码不等于200返回内容默认为空   
+  
 ####对返回数据进行校验
 > 对返回值校验只支持Json格式的数据
 
@@ -197,6 +197,8 @@ get("/api/sign", "登录", (request -> {
 > 1. 可以控制文档的生成
 > isCreateDoc(false);
 > 在执行之前调用isCreateDoc(false)方法将不会生成文档，使用Junit框架时可以放在@BeforeClass注释的函数initFile()方法前，不让生成文档，在测试完成后将false改成true就可以开始生成文档  
+> 2. 实现了对一些敏感参数的封装
+> 3. 完成了对返回状态码不等于200情况的处理，用户可以对其他状态码返回的数据进行校验
 > 
 #####下面给出一个Demo
 
