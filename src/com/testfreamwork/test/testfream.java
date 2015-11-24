@@ -85,7 +85,7 @@ public class testfream {
             request.setDefaultContentEncoding("UTF-8");
             Response response = request.send_json();
             return response;
-        })).print_content();
+        })).getJson().except().equalInt("status", 1).equalStr("message", "123");
 
         createDoc();
     }
@@ -117,8 +117,8 @@ public class testfream {
             Response response = request.send_param();
 //            System.out.println(response.getContent());
             return response;
-        })).getJson().except().equalStr("status", "1").
-            getJsonArray("data").isArrayKey().isInt("id").printJsonObject().isRegex("num", "[0-9a-zA-Z|-]+").isArrayEnd().printJsonObject();
+        })).getJson().except().
+            getJsonArray("data").isArrayKey().isRegex("num", "[0-9a-zA-Z|-]").isArrayEnd();
 
 
         createDoc();

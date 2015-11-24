@@ -3,6 +3,9 @@ package com.testfreamwork.core;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -16,12 +19,15 @@ public class Estimate {
     JSONObject saveAllJsonObject = null;
     JSONArray jsonArray = null;
 
+    private String errormes = "";
+
     public Estimate(Response response, JSONObject jsonObject) {
         this.jsonObject = jsonObject;
         this.response = response;
     }
 
     public Estimate equalInt(String name, Integer val) {
+        this.addErrorMes("equalInt", name, val + "");
         Integer v = null;
         try {
             v = jsonObject.getInteger(name);
@@ -32,13 +38,14 @@ public class Estimate {
         if (v == null || !v.equals(val)) {
             StackTraceElement ste = new Throwable().getStackTrace()[1];
             String s = ste.getFileName() + ": Line " + ste.getLineNumber();
-            this.printMes("equalInt", val + "", s, v + "");
+            this.printMes("equalInt", val + "", s, v + "", name);
         }
 
         return this;
     }
 
     public Estimate equalInt(String name, Integer val, String meg) {
+        this.addErrorMes("equalInt", name, val + "");
         Integer v = null;
         try {
             v = jsonObject.getInteger(name);
@@ -50,13 +57,14 @@ public class Estimate {
         if (v == null || !v.equals(val)) {
             StackTraceElement ste = new Throwable().getStackTrace()[1];
             String s = ste.getFileName() + ": Line " + ste.getLineNumber();
-            this.printMes("equalInt", val + "", s, v + "");
+            this.printMes("equalInt", val + "", s, v + "", name);
         }
 
         return this;
     }
 
     public Estimate equalDouble(String name, Double val) {
+        this.addErrorMes("equalDouble", name, val + "");
         Double v = null;
         try {
             v = jsonObject.getDouble(name);
@@ -67,13 +75,14 @@ public class Estimate {
         if (v == null || !v.equals(val)) {
             StackTraceElement ste = new Throwable().getStackTrace()[1];
             String s = ste.getFileName() + ": Line " + ste.getLineNumber();
-            this.printMes("equalDouble", val + "", s, v + "");
+            this.printMes("equalDouble", val + "", s, v + "", name);
         }
 
         return this;
     }
 
     public Estimate equalDouble(String name, Double val, String meg) {
+        this.addErrorMes("equalDouble", name, val + "");
         Double v = null;
         try {
             v = jsonObject.getDouble(name);
@@ -85,13 +94,14 @@ public class Estimate {
         if (v == null || !v.equals(val)) {
             StackTraceElement ste = new Throwable().getStackTrace()[1];
             String s = ste.getFileName() + ": Line " + ste.getLineNumber();
-            this.printMes("equalDouble", val + "", s, v + "");
+            this.printMes("equalDouble", val + "", s, v + "", name);
         }
 
         return this;
     }
 
     public Estimate equalStr(String name, String val) {
+        this.addErrorMes("equalStr", name, val + "");
         String v = null;
         try {
             v = jsonObject.getString(name);
@@ -102,13 +112,14 @@ public class Estimate {
         if (v == null || !v.equals(val)) {
             StackTraceElement ste = new Throwable().getStackTrace()[1];
             String s = ste.getFileName() + ": Line " + ste.getLineNumber();
-            this.printMes("equalStr", val + "", s, v + "");
+            this.printMes("equalStr", val + "", s, v + "", name);
         }
 
         return this;
     }
 
     public Estimate equalStr(String name, String val, String meg) {
+        this.addErrorMes("equalStr", name, val + "");
         String v = null;
         try {
             v = jsonObject.getString(name);
@@ -120,13 +131,14 @@ public class Estimate {
         if (v == null || !v.equals(val)) {
             StackTraceElement ste = new Throwable().getStackTrace()[1];
             String s = ste.getFileName() + ": Line " + ste.getLineNumber();
-            this.printMes("equalStr", val + "", s, v + "");
+            this.printMes("equalStr", val + "", s, v + "", name);
         }
 
         return this;
     }
 
     public Estimate isInt(String name) {
+        this.addErrorMes("isInt", name);
         Object v = null;
         try {
             v = jsonObject.get(name);
@@ -139,7 +151,7 @@ public class Estimate {
         } catch (Exception e) {
             StackTraceElement ste = new Throwable().getStackTrace()[1];
             String s = ste.getFileName() + ": Line " + ste.getLineNumber();
-            this.printMes("isInt", "Integer", s, "String");
+            this.printMes("isInt", "Integer", s, "String", name);
         }
 
 
@@ -147,6 +159,7 @@ public class Estimate {
     }
 
     public Estimate isInt(String name, String meg) {
+        this.addErrorMes("isInt", name);
         Object v = null;
         try {
             v = jsonObject.get(name);
@@ -160,7 +173,7 @@ public class Estimate {
         } catch (Exception e) {
             StackTraceElement ste = new Throwable().getStackTrace()[1];
             String s = ste.getFileName() + ": Line " + ste.getLineNumber();
-            this.printMes("isInt", "Integer", s, "String");
+            this.printMes("isInt", "Integer", s, "String", name);
 
         }
 
@@ -169,6 +182,7 @@ public class Estimate {
     }
 
     public Estimate isDouble(String name) throws Exception {
+        this.addErrorMes("isDouble", name);
         Object v = null;
         try {
             v = jsonObject.get(name);
@@ -181,12 +195,13 @@ public class Estimate {
         } catch (Exception e) {
             StackTraceElement ste = new Throwable().getStackTrace()[1];
             String s = ste.getFileName() + ": Line " + ste.getLineNumber();
-            this.printMes("isDouble", "Double", s, "String");
+            this.printMes("isDouble", "Double", s, "String", name);
         }
         return this;
     }
 
     public Estimate isDouble(String name, String meg) throws Exception {
+        this.addErrorMes("isDouble", name);
         Object v = null;
         try {
             v = jsonObject.get(name);
@@ -200,13 +215,14 @@ public class Estimate {
         } catch (Exception e) {
             StackTraceElement ste = new Throwable().getStackTrace()[1];
             String s = ste.getFileName() + ": Line " + ste.getLineNumber();
-            this.printMes("isDouble", "Double", s, "String");
+            this.printMes("isDouble", "Double", s, "String", name);
             e.printStackTrace();
         }
         return this;
     }
 
     public Estimate isRegex(String name, String regex) {
+        this.addErrorMes("isRegex", name, regex);
         String v = null;
         try {
             v = jsonObject.getString(name);
@@ -217,11 +233,19 @@ public class Estimate {
 
         StackTraceElement ste = new Throwable().getStackTrace()[1];
         String s = ste.getFileName() + ": Line " + ste.getLineNumber();
+
+        String s1 = "";
+        for(int i=0; i<errormes.indexOf(name)+16; i++){
+            s1 += " ";
+        }
+
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(v);
         if (!matcher.matches()) {
             System.out.println("---------------------------------------");
             System.out.println(s);
+            System.out.println("===============>" + errormes);
+            System.out.println(s1 + "^");
             System.out.println("Actual => " + v);
             System.out.println("正则表达式匹配错误");
             System.out.println("---------------------------------------");
@@ -232,6 +256,7 @@ public class Estimate {
     }
 
     public Estimate isRegex(String name, String regex, String meg) {
+        this.addErrorMes("isRegex", name, regex);
         String v = null;
         try {
             v = jsonObject.getString(name);
@@ -243,11 +268,20 @@ public class Estimate {
 
         StackTraceElement ste = new Throwable().getStackTrace()[1];
         String s = ste.getFileName() + ": Line " + ste.getLineNumber();
+
+
+        String s1 = "";
+        for(int i=0; i<errormes.indexOf(name)+16; i++){
+            s1 += " ";
+        }
+
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(v);
         if (!matcher.matches()) {
             System.out.println("---------------------------------------");
             System.out.println(s);
+            System.out.println("===============>" + errormes);
+            System.out.println(s1 + "^");
             System.out.println("Actual => " + v);
             System.out.println("正则表达式匹配错误");
             System.out.println("---------------------------------------");
@@ -259,17 +293,19 @@ public class Estimate {
 
 
     public Estimate equalCode(int code) {
+        this.addErrorMes("equalCode", code + "");
         TestFreamWork.setCode(code);
         if (response.getCode() != code) {
             StackTraceElement ste = new Throwable().getStackTrace()[1];
             String s = ste.getFileName() + ": Line " + ste.getLineNumber();
-            this.printMes("equalCode", code + "", s, response.getCode() + "");
+            this.printMes("equalCode", code + "", s, response.getCode() + "", code+"");
         }
 
         return this;
     }
 
     public Estimate getJsonArray(String except) {
+        this.addErrorMes("getJsonArray", except);
         JSONArray jsonArray = null;
         try {
             jsonArray = jsonObject.getJSONArray(except);
@@ -280,7 +316,7 @@ public class Estimate {
         if (jsonArray == null) {
             StackTraceElement ste = new Throwable().getStackTrace()[1];
             String s = ste.getFileName() + ": Line " + ste.getLineNumber();
-            printMes("getJsonArray", "Array", s, "NULL");
+            printMes("getJsonArray", "Array", s, "NULL", except);
         } else {
             this.jsonArray = jsonArray;
 
@@ -290,16 +326,17 @@ public class Estimate {
     }
 
     public Estimate isArrayNum(int num) {
+        this.addErrorMes("isArrayNum", num + "");
         TestFreamWork.setArraynum(num);
         if (jsonArray == null) {
             StackTraceElement ste = new Throwable().getStackTrace()[1];
             String s = ste.getFileName() + ": Line " + ste.getLineNumber();
-            printMes("isArrayNum", num + "", s, "NULL");
+            printMes("isArrayNum", num + "", s, "NULL", num+"");
         } else {
             if (jsonArray.size() != num) {
                 StackTraceElement ste = new Throwable().getStackTrace()[1];
                 String s = ste.getFileName() + ": Line " + ste.getLineNumber();
-                printMes("isArrayNum", num + "", s, jsonArray.size() + "");
+                printMes("isArrayNum", num + "", s, jsonArray.size() + "", num+"");
             }
         }
 
@@ -308,17 +345,18 @@ public class Estimate {
     }
 
     public Estimate isArrayKey() {
+        this.addErrorMes("isArrayKey");
         if (jsonArray == null) {
             TestFreamWork.setIsenterArray(1);//json进入数组
             StackTraceElement ste = new Throwable().getStackTrace()[1];
             String s = ste.getFileName() + ": Line " + ste.getLineNumber();
-            printMes("isArrayKey", ">=1", s, "NULL");
+            printMes("isArrayKey", ">=1", s, "NULL", "Key");
             return this;
         } else {
             if (jsonArray.size() == 0) {
                 StackTraceElement ste = new Throwable().getStackTrace()[1];
                 String s = ste.getFileName() + ": Line " + ste.getLineNumber();
-                printMes("isArrayKey", ">=1", s, jsonArray.size() + "");
+                printMes("isArrayKey", ">=1", s, jsonArray.size() + "", "Key");
                 return this;
             } else {
                 TestFreamWork.setIsenterArray(1);//json进入数组
@@ -338,6 +376,7 @@ public class Estimate {
     }
 
     public Estimate isArrayEnd() {
+        this.addErrorMes("isArrayEnd");
         String arraydata = TestFreamWork.getArraydata();
         JSONObject arrayjson = TestFreamWork.getResponseArray();
         JSONArray array = new JSONArray();
@@ -364,10 +403,28 @@ public class Estimate {
         return this;
     }
 
-    private void printMes(String method, String except, String meg, String actual) {
+    public void addErrorMes(String method, String mes1, String mes2){
+        errormes = errormes + "." + method + "(\"" + mes1 + "\"," + mes2 + ")";
+    }
+
+    public void addErrorMes(String method, String mes1){
+        errormes = errormes + "." + method + "(\"" + mes1 +"\")";
+    }
+
+    public void addErrorMes(String method){
+        errormes = errormes + "." + method + "()";
+    }
+
+    private void printMes(String method, String except, String meg, String actual, String key) {
+        String s = "";
+        for(int i=0; i<errormes.indexOf(key)+16; i++){
+            s += " ";
+        }
 
         System.out.println("---------------------------------------");
         System.out.println(meg);
+        System.out.println("===============>" + errormes);
+        System.out.println(s + "^");
         System.out.println("error => " + method);
         System.out.println("Except => " + except);
         System.out.println("Actual => " + actual);
