@@ -11,18 +11,11 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Mylanguage/src/com/mylanguage/analysis/Analysis.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Mylanguage/src/com/mylanguage/analysis/LexicalAnalysis.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Mylanguage/src/com/mylanguage/analysis/LexicalAnalysisException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/testfreamwork/core/ReadSelectLine.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Mylanguage/src/com/mylanguage/analysis/SignParser.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Mylanguage/src/com/mylanguage/analysis/Token.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Mylanguage/src/com/mylanguage/analysis/test.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Mylanguage/.idea/uiDesigner.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../sparkjava" afterPath="$PROJECT_DIR$/../sparkjava" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TestFreamWork/com/testfreamwork/test/testfream.class" afterPath="$PROJECT_DIR$/out/production/TestFreamWork/com/testfreamwork/test/testfream.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/testfreamwork/core/Estimate.java" afterPath="$PROJECT_DIR$/src/com/testfreamwork/core/Estimate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc.md" afterPath="$PROJECT_DIR$/doc.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/testfreamwork/test/testfream.java" afterPath="$PROJECT_DIR$/src/com/testfreamwork/test/testfream.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TestFream.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -844,12 +837,12 @@
       <workItem from="1448268639640" duration="1923000" />
       <workItem from="1448274230136" duration="3810000" />
       <workItem from="1448350587532" duration="11000" />
-      <workItem from="1448361424504" duration="6087000" />
+      <workItem from="1448361424504" duration="6245000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49363000" />
+    <option name="totallyTimeSpent" value="49521000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="0" />
