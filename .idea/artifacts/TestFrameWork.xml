@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="TestFreamWork">
-    <output-path>$PROJECT_DIR$/out/artifacts/TestFreamWork</output-path>
-    <root id="archive" name="TestFreamWork.jar">
+  <artifact type="jar" name="TestFrameWork">
+    <output-path>$PROJECT_DIR$/out/artifacts/TestFrameWork</output-path>
+    <root id="archive" name="TestFrameWork.jar">
       <element id="module-output" name="TestFrameWork" />
       <element id="file-copy" path="$USER_HOME$/Downloads/junit-4.10.jar" />
       <element id="file-copy" path="$USER_HOME$/Downloads/fastjson-1.2.5.jar" />

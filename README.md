@@ -6,11 +6,11 @@
 >2. 使用get, post, put, delete方式传输数据, 返回值校验，同时可以根据测试数据生成相应的md格式文档
 >
 ## Quickly Start
-> 导入相应的jar包 [TestFreamWork](https://github.com/wwg377655460/TestFreamWork/raw/master/out/artifacts/TestFreamWork/TestFreamWork.jar)和依赖包 FastJson.jar
+> 导入相应的jar包 [TestFrameWork](https://github.com/wwg377655460/TestFrameWork/raw/master/out/artifacts/TestFrameWork/TestFrameWork.jar)和依赖包 FastJson.jar
 > 导入成功就可以运行了
 > 静态导入文件
 ```
-import static com.testfreamwork.core.TestFreamWork.*;
+import static com.testfreamwork.core.TestFrameWork.*;
 ```
 > 发送一个post请求
 ```
