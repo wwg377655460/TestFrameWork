@@ -1,6 +1,6 @@
-# TestFreamWork
+# TestFrameWork
 
-###TestFreamWork是Java编写的测试框架
+###TestFrameWork是Java编写的测试框架
 >特点:
 >1. 使用了Java8 lambda表达式
 >2. 使用get, post, put, delete方式传输数据, 返回值校验，同时可以根据测试数据生成相应的md格式文档
