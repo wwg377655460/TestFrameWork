@@ -11,11 +11,16 @@ import java.util.regex.Pattern;
  */
 public class Estimate {
 
-    Response response = null;
-    JSONObject jsonObject = null;
-    JSONObject saveAllJsonObject = null;
-    JSONArray jsonArray = null;
+    //Response对象
+    private Response response = null;
+    //返回的json对象
+    private JSONObject jsonObject = null;
+    //获取数组对象时json对象保存
+    private JSONObject saveAllJsonObject = null;
+    //json数组
+    private JSONArray jsonArray = null;
 
+    //错误信息
     private String errormes = "";
 
     public Estimate(Response response, JSONObject jsonObject) {
@@ -232,7 +237,7 @@ public class Estimate {
         String s = ste.getFileName() + ": Line " + ste.getLineNumber();
 
         String s1 = "";
-        for(int i=0; i<errormes.indexOf(name)+16; i++){
+        for (int i = 0; i < errormes.indexOf(name) + 16; i++) {
             s1 += " ";
         }
 
@@ -268,7 +273,7 @@ public class Estimate {
 
 
         String s1 = "";
-        for(int i=0; i<errormes.indexOf(name)+16; i++){
+        for (int i = 0; i < errormes.indexOf(name) + 16; i++) {
             s1 += " ";
         }
 
@@ -295,7 +300,7 @@ public class Estimate {
         if (response.getCode() != code) {
             StackTraceElement ste = new Throwable().getStackTrace()[1];
             String s = ste.getFileName() + ": Line " + ste.getLineNumber();
-            this.printMes("equalCode", code + "", s, response.getCode() + "", code+"");
+            this.printMes("equalCode", code + "", s, response.getCode() + "", code + "");
         }
 
         return this;
@@ -328,12 +333,12 @@ public class Estimate {
         if (jsonArray == null) {
             StackTraceElement ste = new Throwable().getStackTrace()[1];
             String s = ste.getFileName() + ": Line " + ste.getLineNumber();
-            printMes("isArrayNum", num + "", s, "NULL", num+"");
+            printMes("isArrayNum", num + "", s, "NULL", num + "");
         } else {
             if (jsonArray.size() != num) {
                 StackTraceElement ste = new Throwable().getStackTrace()[1];
                 String s = ste.getFileName() + ": Line " + ste.getLineNumber();
-                printMes("isArrayNum", num + "", s, jsonArray.size() + "", num+"");
+                printMes("isArrayNum", num + "", s, jsonArray.size() + "", num + "");
             }
         }
 
@@ -400,21 +405,21 @@ public class Estimate {
         return this;
     }
 
-    public void addErrorMes(String method, String mes1, String mes2){
+    public void addErrorMes(String method, String mes1, String mes2) {
         errormes = errormes + "." + method + "(\"" + mes1 + "\"," + mes2 + ")";
     }
 
-    public void addErrorMes(String method, String mes1){
-        errormes = errormes + "." + method + "(\"" + mes1 +"\")";
+    public void addErrorMes(String method, String mes1) {
+        errormes = errormes + "." + method + "(\"" + mes1 + "\")";
     }
 
-    public void addErrorMes(String method){
+    public void addErrorMes(String method) {
         errormes = errormes + "." + method + "()";
     }
 
     private void printMes(String method, String except, String meg, String actual, String key) {
         String s = "";
-        for(int i=0; i<errormes.indexOf(key)+16; i++){
+        for (int i = 0; i < errormes.indexOf(key) + 16; i++) {
             s += " ";
         }
 
@@ -428,8 +433,5 @@ public class Estimate {
         System.out.println("---------------------------------------");
     }
 
-    private static String getLineInfo() {
-        StackTraceElement ste = new Throwable().getStackTrace()[1];
-        return ste.getFileName() + ": Line " + ste.getLineNumber();
-    }
+
 }

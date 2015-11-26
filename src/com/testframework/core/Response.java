@@ -26,13 +26,6 @@ public class Response {
 
     private int port;
 
-    public ExceptValue getJson() {
-        JSONObject jsonObject = JSON.parseObject(this.content);
-        this.setJsonObject(jsonObject);
-        ExceptValue exceptValue = new ExceptValue(this, jsonObject);
-        return exceptValue;
-    }
-
 
     private String protocol;
 
@@ -231,5 +224,21 @@ public class Response {
 
     protected void setContentCollection(Vector<String> contentCollection) {
         this.contentCollection = contentCollection;
+    }
+
+    /**
+     * 获取返回信息的json值
+     * @return ExceptValue对象
+     */
+    public ExceptValue getJson() {
+        JSONObject jsonObject = null;
+        if (this.content == null) {
+            System.out.println("=================>你所请求的地址无法访问");
+            jsonObject = JSON.parseObject("");
+        } else {
+            jsonObject = JSON.parseObject(this.content);
+        }
+        this.setJsonObject(jsonObject);
+        return new ExceptValue(this, jsonObject);
     }
 }

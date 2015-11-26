@@ -118,8 +118,8 @@ public class Request {
 
             return this.makeContent(urlString, urlConnection);
         } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+//            e.printStackTrace();
+            return this.makeContent(urlString, null);
         }
     }
 
@@ -131,7 +131,7 @@ public class Request {
      * @throws IOException
      */
     private Response makeContent(String urlString,
-                                 HttpURLConnection urlConnection) throws IOException {
+                                 HttpURLConnection urlConnection)  {
         Response Responseer = new Response();
         String ecod = this.defaultContentEncoding;
         InputStream in = null;
@@ -158,7 +158,6 @@ public class Request {
                 ecod = this.defaultContentEncoding;
 
             Responseer.setUrlString(urlString);
-
             Responseer.setDefaultPort(urlConnection.getURL().getDefaultPort());
             Responseer.setFile(urlConnection.getURL().getFile());
             Responseer.setHost(urlConnection.getURL().getHost());
@@ -168,7 +167,6 @@ public class Request {
             Responseer.setQuery(urlConnection.getURL().getQuery());
             Responseer.setRef(urlConnection.getURL().getRef());
             Responseer.setUserInfo(urlConnection.getURL().getUserInfo());
-
             Responseer.setContent(StrUtil.decode(new String(temp.toString().getBytes(), ecod)));
             Responseer.setContentEncoding(ecod);
             Responseer.setCode(urlConnection.getResponseCode());
@@ -179,9 +177,9 @@ public class Request {
             Responseer.setReadTimeout(urlConnection.getReadTimeout());
 
             return Responseer;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
+        } catch (Exception e) {
+//            e.printStackTrace();
+            return Responseer;
         } finally {
             if (urlConnection != null)
                 urlConnection.disconnect();
