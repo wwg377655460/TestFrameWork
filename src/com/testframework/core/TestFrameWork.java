@@ -27,42 +27,22 @@ public class TestFrameWork {
 
     @Test
     public static Response get(String url, String name, Handle handle) {
-        Request request = new Request();
-        TestFrameWork.method = "get";
-        TestFrameWork.name = name;
-        TestFrameWork.url = url;
-        request.setMethod("GET");
-        request.setUrlString(baseUrl + url);
+        Request request = setInitMes(url, "GET", name);
         return handle.handle(request);
     }
 
     public static Response post(String url, String name, Handle handle) {
-        Request request = new Request();
-        TestFrameWork.method = "post";
-        TestFrameWork.name = name;
-        TestFrameWork.url = url;
-        request.setMethod("POST");
-        request.setUrlString(baseUrl + url);
+        Request request = setInitMes(url, "POST", name);
         return handle.handle(request);
     }
 
     public static Response put(String url, String name, Handle handle) {
-        Request request = new Request();
-        TestFrameWork.method = "put";
-        TestFrameWork.name = name;
-        TestFrameWork.url = url;
-        request.setMethod("PUT");
-        request.setUrlString(baseUrl + url);
+        Request request = setInitMes(url, "PUT", name);
         return handle.handle(request);
     }
 
     public static Response delete(String url, String name, Handle handle) {
-        Request request = new Request();
-        TestFrameWork.method = "delete";
-        TestFrameWork.name = name;
-        TestFrameWork.url = url;
-        request.setMethod("DELETE");
-        request.setUrlString(baseUrl + url);
+        Request request = setInitMes(url, "DELETE", name);
         return handle.handle(request);
     }
 
@@ -73,6 +53,16 @@ public class TestFrameWork {
             TestFrameWork.baseUrl = base_url + ":" + port + "/" + appRoute;
         }
 
+    }
+
+    public static Request setInitMes(String url, String method, String name){
+        Request request = new Request();
+        TestFrameWork.method = method;
+        TestFrameWork.name = name;
+        TestFrameWork.url = url;
+        request.setMethod(method);
+        request.setUrlString(baseUrl + url);
+        return request;
     }
 
     public static Map<String, String> getMap() {
@@ -153,10 +143,6 @@ public class TestFrameWork {
     }
 
     public static void createDoc() {
-//        System.out.print(baseUrl + url);
-//        System.out.print(name);
-//        System.out.print(requestJson);
-//        System.out.print(map);
 
         if (TestFrameWork.isCreateFileDoc) {
             CreateFile.createDoc(url, method, name, map, code, responseJson.toJSONString().replace("\\", ""), requestJson);

@@ -16,10 +16,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Mylanguage/src/com/mylanguage/analysis/test.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Mylanguage/.idea/uiDesigner.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../sparkjava" afterPath="$PROJECT_DIR$/../sparkjava" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/testframework/core/Estimate.java" afterPath="$PROJECT_DIR$/src/com/testframework/core/Estimate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/testframework/core/ExceptValue.java" afterPath="$PROJECT_DIR$/src/com/testframework/core/ExceptValue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/testframework/core/Request.java" afterPath="$PROJECT_DIR$/src/com/testframework/core/Request.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/testframework/core/Response.java" afterPath="$PROJECT_DIR$/src/com/testframework/core/Response.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/testframework/core/TestFrameWork.java" afterPath="$PROJECT_DIR$/src/com/testframework/core/TestFrameWork.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc.md" afterPath="$PROJECT_DIR$/doc.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -67,18 +64,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateinitFile.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/testframework/core/CreateinitFile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="42" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MyJsonObject.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/testframework/core/MyJsonObject.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -89,10 +74,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testfream.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="testfream.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/testframework/test/testfream.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.587963">
+            <state vertical-scroll-proportion="0.0">
               <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -104,8 +89,8 @@
       <file leaf-file-name="doc.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doc.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-54.592594">
-              <caret line="206" column="0" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="301" column="0" selection-start-line="301" selection-start-column="0" selection-end-line="301" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -124,27 +109,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReadSelectLine.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/testframework/core/ReadSelectLine.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Estimate.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Estimate.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/testframework/core/Estimate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="18.078703">
               <caret line="435" column="0" selection-start-line="435" selection-start-column="0" selection-end-line="435" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#13546#13547#0" expanded="true" />
-                <element signature="e#13603#13604#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -155,6 +126,26 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestFrameWork.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/testframework/core/TestFrameWork.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Handle.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/testframework/core/Handle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -218,6 +209,7 @@
         <option value="$PROJECT_DIR$/src/com/testframework/core/ExceptValue.java" />
         <option value="$PROJECT_DIR$/src/com/testframework/core/Request.java" />
         <option value="$PROJECT_DIR$/src/com/testframework/core/Estimate.java" />
+        <option value="$PROJECT_DIR$/src/com/testframework/core/TestFrameWork.java" />
       </list>
     </option>
   </component>
@@ -278,6 +270,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -379,7 +372,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -816,8 +808,8 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.testfream.test3" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.testfream" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.testfream.test6" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.testfream.test6" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.testfream" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.testfream.test4" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.testfream.test5" />
       </list>
@@ -843,12 +835,15 @@
       <workItem from="1448350587532" duration="11000" />
       <workItem from="1448361424504" duration="6698000" />
       <workItem from="1448369503746" duration="908000" />
-      <workItem from="1448513899544" duration="1430000" />
+      <workItem from="1448513899544" duration="1534000" />
+      <workItem from="1448601362656" duration="8000" />
+      <workItem from="1448601376258" duration="6000" />
+      <workItem from="1448892743473" duration="378000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52312000" />
+    <option name="totallyTimeSpent" value="52808000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="0" />
@@ -995,7 +990,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="48" column="5" selection-start-line="12" selection-start-column="8" selection-end-line="48" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1005,8 +999,6 @@
           <caret line="318" column="48" selection-start-line="318" selection-start-column="48" selection-end-line="318" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#13546#13547#0" expanded="true" />
-            <element signature="e#13603#13604#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1072,7 +1064,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="52" column="5" selection-start-line="16" selection-start-column="8" selection-end-line="52" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1082,8 +1073,6 @@
           <caret line="101" column="20" selection-start-line="101" selection-start-column="20" selection-end-line="101" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#13546#13547#0" expanded="true" />
-            <element signature="e#13603#13604#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1215,26 +1204,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/testframework/core/Handle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/testframework/core/TestFrameWork.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="144" column="31" selection-start-line="144" selection-start-column="31" selection-end-line="144" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1242,7 +1215,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1250,7 +1222,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1278,14 +1249,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/testframework/core/StrUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1322,28 +1285,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/doc.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-54.592594">
-          <caret line="206" column="0" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="301" column="0" selection-start-line="301" selection-start-column="0" selection-end-line="301" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/testframework/core/StrUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/testframework/test/testfream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/testframework/core/TestFrameWork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/testframework/core/Handle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/testframework/core/Estimate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="18.078703">
           <caret line="435" column="0" selection-start-line="435" selection-start-column="0" selection-end-line="435" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#13546#13547#0" expanded="true" />
-            <element signature="e#13603#13604#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/testframework/test/testfream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.587963">
-          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
